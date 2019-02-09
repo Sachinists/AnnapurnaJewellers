@@ -1,0 +1,15 @@
+a{
+    font-weight: 700;
+    font-size: xx-large;
+    font-family: Arial;
+}
+.main{
+    width: 100%;
+}
+.shopName{
+    float: left;
+}
+.loginButton{
+    float: right;
+    font-size: xx-large;
+}
