@@ -8,6 +8,7 @@ import { AdminLoginComponent } from './Components/login/admin-login/admin-login.
 import { SalesRepresentativeLoginComponent } from './Components/login/sales-representative-login/sales-representative-login.component';
 import { NavbarComponent } from './Components/login/navbar/navbar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
