@@ -8,18 +8,29 @@ import { AdminLoginComponent } from './Components/login/admin-login/admin-login.
 import { SalesRepresentativeLoginComponent } from './Components/login/sales-representative-login/sales-representative-login.component';
 import { NavbarComponent } from './Components/login/navbar/navbar.component';
 
+import { ModalModule } from 'ngx-bootstrap';
+import { AlertModule } from 'ngx-bootstrap';
 
+import { FooterComponent } from './Components/login/footer/footer.component';
+
+import { FormsModule }   from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SalesDashboardComponent } from './Components/posModule/sales-dashboard/sales-dashboard.component';
+import { AdminDashboardComponent } from './Components/adminModule/admin-dashboard/admin-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     IndexPageComponent,
     AdminLoginComponent,
     SalesRepresentativeLoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent,
+    SalesDashboardComponent,
+    AdminDashboardComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule,FormsModule,ReactiveFormsModule,
+    AppRoutingModule,ModalModule.forRoot(),AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

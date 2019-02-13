@@ -3,10 +3,62 @@
     <div class="shopName">Annapurna Jewellers</div>
     <div class="buttons">
       <ul class="navbar-nav">
-        <li class="nav-item"><i class="fas fa-cog"></i></li>
-        <li class="nav-item">_</li>
-        <li class="nav-item">X</li>
+        <li class="nav-item">
+          <div (click)="lgModal.show()"><i class="fas fa-cog"></i></div>
+        </li>
+        <li class="nav-item">
+          <div style="margin-top: -5px;"><i class="fas fa-window-minimize"></i></div>
+        </li>
+        <li class="nav-item">
+          <div><i class="fas fa-times"></i></div>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
+
+
+
+
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+          <div><i class="fas fa-times"></i></div>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="container">
+          <div class="login-form">
+            <div class="main-div">
+              <div class="panel">
+                <h2>Admin Login</h2>
+                <p>Please enter your Username and Password</p>
+              </div>
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <input type="text" required (click)="incorrect=false" class="form-control"  formControlName="username"
+                    placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <input type="password" required (click)="incorrect=false" class="form-control" formControlName="password"
+                    placeholder="Password">
+                </div>
+                <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+              </form>
+              <div style="margin-top: 10px;" *ngIf="incorrect">
+                <alert type="danger">
+                  <strong>Sorry!</strong> Username and Password didn't match.
+                </alert>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,25 @@
-<p>
-  sales-representative-login works!
-</p>
-<app-navbar></app-navbar>
+<div class="container">
+  <div class="login-form">
+    <div class="main-div">
+      <div class="panel">
+        <h2>POS Login</h2>
+        <p>Please enter your Username and Password</p>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input type="text" required (click)="incorrect=false" formControlName="username" class="form-control" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <input type="password" required (click)="incorrect=false" formControlName="password" class="form-control" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+      </form>
+      <div style="margin-top: 10px;" *ngIf="incorrect"> 
+        <alert type="danger">
+          <strong>Sorry!</strong> Username and Password didn't match.
+        </alert>
+      </div>
+
+    </div>
+  </div>
+</div>

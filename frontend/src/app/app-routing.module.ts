@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { IndexPageComponent } from './Components/login/index-page/index-page.component';
 import { AdminLoginComponent } from './Components/login/admin-login/admin-login.component';
 import { SalesRepresentativeLoginComponent } from './Components/login/sales-representative-login/sales-representative-login.component';
+import { SalesDashboardComponent } from './Components/posModule/sales-dashboard/sales-dashboard.component';
+import { AdminDashboardComponent } from './Components/adminModule/admin-dashboard/admin-dashboard.component';
+
 
 const routes: Routes = [
   { 
@@ -18,6 +21,14 @@ const routes: Routes = [
         component: SalesRepresentativeLoginComponent
       }
     ]
+  },
+  {
+    path: 'salesDashboard', 
+    component: SalesDashboardComponent
+  },
+  {
+    path: 'adminDashboard', 
+    component: AdminDashboardComponent
   }
 ];
 
