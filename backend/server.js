@@ -14,4 +14,4 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname));
 });
 
-http.createServer(app).listen(process.env.PORT || 1337, () => console.log('Your server is listening in port: ' + process.env.PORT || 1337));
+http.createServer(app).listen( 1337, () => console.log('Your server is listening in port: ' + process.env.PORT || 1337));
